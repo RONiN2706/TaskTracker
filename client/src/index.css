@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(44, 33%, 98%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(44, 8%, 90%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(44, 33%, 98%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(40, 20%, 96%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(36, 20%, 85%);
+  --input: hsl(36, 20%, 85%);
+  --primary: hsl(20, 45%, 45%);
+  --primary-foreground: hsl(44, 33%, 98%);
+  --secondary: hsl(44, 8%, 90%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(44, 8%, 90%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 74%, 58%);
+  --destructive-foreground: hsl(44, 33%, 98%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Theme colors - default light theme */
+  --theme-bg: var(--light-bg);
+  --theme-card-bg: var(--light-card-bg);
+  --theme-text: var(--light-text);
+  --theme-primary: var(--light-primary);
+  --theme-secondary: var(--light-secondary);
+  --theme-accent: var(--light-accent);
+  --theme-muted: var(--light-muted);
+  --theme-border: var(--light-border);
+  
+  /* Theme 1: Light off-white notebook with dark brown text */
+  --light-bg: hsl(44, 33%, 98%);
+  --light-card-bg: hsl(40, 20%, 96%);
+  --light-text: hsl(22, 42%, 25%);
+  --light-primary: hsl(22, 42%, 25%);
+  --light-secondary: hsl(36, 45%, 66%);
+  --light-accent: hsl(36, 45%, 66%);
+  --light-muted: hsl(25, 23%, 45%);
+  --light-border: hsl(36, 20%, 85%);
+  
+  /* Theme 2: Midnight grey with white text */
+  --dark-bg: hsl(220, 15%, 15%);
+  --dark-card-bg: hsl(220, 15%, 18%);
+  --dark-text: hsl(0, 0%, 95%);
+  --dark-primary: hsl(0, 0%, 95%);
+  --dark-secondary: hsl(220, 15%, 35%);
+  --dark-accent: hsl(220, 30%, 60%);
+  --dark-muted: hsl(220, 10%, 70%);
+  --dark-border: hsl(220, 15%, 25%);
+  
+  /* Theme 3: Dark green with light green text */
+  --green-bg: hsl(120, 25%, 12%);
+  --green-card-bg: hsl(120, 25%, 15%);
+  --green-text: hsl(120, 40%, 85%);
+  --green-primary: hsl(120, 40%, 85%);
+  --green-secondary: hsl(120, 30%, 25%);
+  --green-accent: hsl(120, 50%, 60%);
+  --green-muted: hsl(120, 20%, 65%);
+  --green-border: hsl(120, 20%, 20%);
+  
+  /* Theme 4: Pure white with bright red text */
+  --white-bg: hsl(0, 0%, 100%);
+  --white-card-bg: hsl(0, 0%, 98%);
+  --white-text: hsl(0, 85%, 45%);
+  --white-primary: hsl(0, 85%, 45%);
+  --white-secondary: hsl(0, 20%, 85%);
+  --white-accent: hsl(0, 100%, 60%);
+  --white-muted: hsl(0, 50%, 60%);
+  --white-border: hsl(0, 20%, 90%);
+  
+  /* Theme 5: Sea blue with bright white text */
+  --blue-bg: hsl(200, 80%, 25%);
+  --blue-card-bg: hsl(200, 80%, 30%);
+  --blue-text: hsl(0, 0%, 98%);
+  --blue-primary: hsl(0, 0%, 98%);
+  --blue-secondary: hsl(200, 50%, 45%);
+  --blue-accent: hsl(200, 90%, 70%);
+  --blue-muted: hsl(200, 30%, 80%);
+  --blue-border: hsl(200, 60%, 35%);
+  
+  /* Base diary colors */
+  --diary-sage: hsl(85, 22%, 45%);
+  --diary-red: hsl(9, 42%, 52%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(22, 42%, 40%);
+  --primary-foreground: hsl(44, 33%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    font-family: 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Times New Roman', serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-century {
+    font-family: 'Century Gothic', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Times New Roman', serif;
+  }
+}
+
+@layer utilities {
+  .theme-bg {
+    background-color: var(--theme-bg);
+  }
+  
+  .theme-card-bg {
+    background-color: var(--theme-card-bg);
+  }
+  
+  .theme-text {
+    color: var(--theme-text);
+  }
+  
+  .theme-primary {
+    color: var(--theme-primary);
+  }
+  
+  .bg-theme-primary {
+    background-color: var(--theme-primary);
+  }
+  
+  .theme-secondary {
+    color: var(--theme-secondary);
+  }
+  
+  .bg-theme-secondary {
+    background-color: var(--theme-secondary);
+  }
+  
+  .theme-accent {
+    color: var(--theme-accent);
+  }
+  
+  .bg-theme-accent {
+    background-color: var(--theme-accent);
+  }
+  
+  .theme-muted {
+    color: var(--theme-muted);
+  }
+  
+  .bg-theme-muted {
+    background-color: var(--theme-muted);
+  }
+  
+  .theme-border {
+    border-color: var(--theme-border);
+  }
+  
+  .diary-sage {
+    color: var(--diary-sage);
+  }
+  
+  .bg-diary-sage {
+    background-color: var(--diary-sage);
+  }
+  
+  .diary-red {
+    color: var(--diary-red);
+  }
+  
+  .bg-diary-red {
+    background-color: var(--diary-red);
+  }
+  
+  .paper-texture {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(139, 90, 60, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(212, 165, 116, 0.02) 0%, transparent 50%);
+  }
+  
+  .task-line {
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 1.4rem,
+      rgba(139, 90, 60, 0.1) 1.4rem,
+      rgba(139, 90, 60, 0.1) 1.5rem
+    );
+  }
+  
+  .overdue {
+    background-color: rgba(184, 90, 74, 0.05);
+    border-left: 4px solid var(--diary-red);
+  }
+  
+  .completed {
+    opacity: 0.7;
+    background-color: rgba(122, 139, 90, 0.05);
+  }
+  
+  .shadow-diary {
+    box-shadow: 0 4px 6px -1px rgba(139, 90, 60, 0.1), 0 2px 4px -1px rgba(139, 90, 60, 0.06);
+  }
+  
+  .shadow-diary-lg {
+    box-shadow: 0 10px 15px -3px rgba(139, 90, 60, 0.1), 0 4px 6px -2px rgba(139, 90, 60, 0.05);
+  }
+  
+  .shadow-inner-diary {
+    box-shadow: inset 0 2px 4px 0 rgba(139, 90, 60, 0.06);
+  }
+}
